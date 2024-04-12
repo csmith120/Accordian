@@ -5,23 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accordian</title>
 
-    <link rel="sylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-    <link href="lovely.css" rel="sylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <style>
         body, .jumbotron {padding: 30px;}
+
+        html {
+            overflow-y: scroll;
+        }
+
         body { background: #efefef; }
+
+        ul{
+            margin-bottom: 0;
+        }
+
+        .accordion {
+            background: #fff;
+            border-radius: 5px;
+            padding: 30px;
+        }
+
+        .question {
+            border-top: 1px solid #eee;
+            padding: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .question h2 {
+            font-size: 20px;
+            margin: 0;
+            color: #c00c00;
+        }
+
+        .question .glyphicon {
+            position: absolute;
+            right: 20px;
+            top: 0;
+            height: 100%;
+            align-items: center;
+            transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+        }
+
+        .answer {
+            min-height: 0;
+            overflow: hidden;
+            transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+        }
+
+        .answer p {
+            padding: 20px;
+        }
+
+        .accordion li.open .qustion .glyphicon{
+            transform: rotate(180deg);
+        }
+
+        .accordion li.open .answer{
+            max-height: 150px;
+        }
+
     </style>
 </head>
 <body>
     
 <div class="container">
 
-<div class="accordian">
+<div class="accordion">
     <ul class="list-unstyled">
-        <li>
-            <div class="qustion">
+        <li class="open">
+            <div class="question">
 
                 <h2>will i be rich?</h2>
                 <span class="glyphicon glyphicon-chevron-down"></span>
@@ -33,7 +87,7 @@
         </li>
         
         <li>
-            <div class="qustion">
+            <div class="question">
 
                 <h2>whats for dinner?</h2>
                 <span class="glyphicon glyphicon-chevron-down"></span>
@@ -45,7 +99,7 @@
         </li>
         
         <li>
-            <div class="qustion">
+            <div class="question">
 
                 <h2>is javascript awesome?</h2>
                 <span class="glyphicon glyphicon-chevron-down"></span>
